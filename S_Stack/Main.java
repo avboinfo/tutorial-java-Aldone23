@@ -5,14 +5,40 @@
 
 package S_Stack;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.util.Scanner;
+
 public class Main {
 
     public static void main( String[] args ) {
         Stack<String> s = new Stack<>();
-        s.push("Juve");
-        s.push("Inter");
-        System.out.println(s.pop());
-        System.out.println(s);
+
+
+         try {
+            File f1 = new File("F_File/InputFile.txt");
+            File f = new File("F_File/OutputFile.txt");
+
+            Scanner fileInput = new Scanner(f1);
+
+             FileWriter fw = new FileWriter(f);
+            
+                while (fileInput.hasNextLine()) {
+                    String temp = fileInput.nextLine();
+                        s.push(temp);
+
+                        fw.write(s+"");
+            }
+
+            fileInput.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        
+        
     }
 
 }

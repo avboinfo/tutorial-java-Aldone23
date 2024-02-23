@@ -8,17 +8,31 @@ public class ProveArrayList {
 
         ArrayList<String> a = new ArrayList<>();
         a.add("uno");
-		a.add("due");
+		a.add("Babina");
 		a.add("tre");
 		a.add("quattro");
 		a.add("cinque");
 		
-		a.remove("due");
+		a.remove("Babina");
+        a.add(1,"due");
 		
-		Collections.sort(a);
-		System.out.println(a);
+        //I seguenti for eseguono la stessa funzione, il primo è più semplice
+        for(String s : a){
+            System.out.println(s);
+        }
 
-        System.out.pritnln("Juve".compareTo("Milan"));
+        for(int i = 0; i<a.size();i++){
+            String s = a.get(i);
+            System.out.println(s);
+        }
+		
+        System.out.println(a);
+
+        System.out.println("Juve".compareTo("Milan"));
+
+        
+
+        
 
     }
 }
